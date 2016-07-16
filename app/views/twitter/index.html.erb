@@ -1,0 +1,33 @@
+<h1>Twitter#index</h1>
+<p>Find me in app/views/twitter/index.html.erb</p>
+
+
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      Add one!<%#= render 'shared/account_form' %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <ol class="twitter_contacts">
+    <% 11.times do %>
+      <li class="<%= @acc["id"] %> row">
+        <%= link_to pic_for(@acc), twitter_for(@acc), class: "col-md-1" %>
+        <div class="col-md-9">
+          <span class="user">
+            <%= link_to @acc["name"], twitter_for(@acc) %>
+          </span>
+          <span class="timestamp">@<%= @acc["screen_name"] %></span>
+          <span class="content"><%= @acc["description"] %></span>
+        </div>
+        <div class="col-md-2 actBtn">
+          <%= link_to "ACTION", "#", class: "btn btn-info btn-lg" %>
+        </div>
+      </li>
+    <% end %>
+    </ol>
+  </div>
+</div>

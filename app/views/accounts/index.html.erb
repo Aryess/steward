@@ -1,0 +1,23 @@
+<% provide :title, "My accounts" %>
+
+<h1>My accounts</h1>
+
+<div class="row">
+  <aside class="col-md-3">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <h5>Add one!</h5>
+      <%= render 'shared/add_accounts' %>
+    </section>
+  </aside>
+  <div class="col-md-9">
+  <% if current_user.accounts.any? %>
+      <ol class="accounts">
+        <%= render current_user.accounts %>
+      </ol>
+
+    <% end %>
+  </div>
+</div>

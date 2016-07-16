@@ -1,0 +1,11 @@
+<% provide(:title, "Who am I?") %>
+
+<h1>Who am I?</h1>
+<ul>
+<% @accs.each do |k, acc| %>
+  <li>
+  	<a title="Mailbox" href="#" class="<%= "no" unless acc["has_mail"] %>havemail mail">messages</a>
+  	<span class="accoutname"><%= k %></span> (<%= acc["link_karma"] %>/<%= acc["comment_karma"] %>)
+  </li>
+<% end %>
+</ul>

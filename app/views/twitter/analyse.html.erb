@@ -1,0 +1,26 @@
+<%
+provide(:title, "Twitter contact analyse" )
+%>
+<h1>Twitter#analyse</h1>
+
+<div class="row">
+  <aside class="col-md-3">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      Add one!<%#= render 'shared/account_form' %>
+    </section>
+  </aside>
+  <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+  <div class="col-md-9" id="tabs">
+    <ul>
+      <li><a href="#idontfollowback">I don't follow back (<%= @i_dont_follow_back.size %>)</a></li>
+      <li><a href="#theydontfollow">They don't follow back (<%= @they_dont_follow_back.size %>)</a></li>
+      <li><a href="#friends">We follow each others (<%= @double_link.size %>)</a></li>
+    </ul>
+    <div id="idontfollowback"><%= render 'user_group', accs: @i_dont_follow_back %></div>
+    <div id="theydontfollow"><%= render 'user_group', accs: @they_dont_follow_back %></div>
+    <div id="friends"><%= render 'user_group', accs: @double_link %></div>
+  </div>
+</div>

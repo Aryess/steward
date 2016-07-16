@@ -1,0 +1,58 @@
+<div class="twitter_contacts">
+<% accs.each do |k, acc| %>
+  <div class="twittcard col-md-4"><%#= acc["name"] %>
+          <div class="Grid-cell u-size1of3 u-mb10" data-test-selector="ProfileTimelineUser" role="presentation">
+  <div class="js-stream-item" role="listitem" data-item-id="<%= acc["id"] %>" id="stream-item-user-<%= acc["id"] %>" data-item-type="user">
+    <div class="ProfileCard js-actionable-user" data-screen-name="<%= acc["screen_name"] %>" data-user-id="<%= acc["id"] %>" data-feedback-token="" data-impression-id="">
+      <a class="ProfileCard-bg js-nav" href="http://twitter.com/<%= acc["screen_name"] %>" tabindex="-1" aria-hidden="true" style="
+        background-color: #0091FF;
+        background-image: url(<%= acc["profile_banner_url"] %>);">
+      </a>
+
+      <div class="ProfileCard-content">
+        <a class="ProfileCard-avatarLink js-nav js-tooltip" href="http://twitter.com/<%= acc["screen_name"] %>" tabindex="-1" aria-hidden="true" data-original-title="<%= acc["name"] %>">
+          <img class="ProfileCard-avatarImage js-action-profile-avatar" src="<%= acc["profile_image_url_https"] %>" alt="">
+        </a>
+
+        <div class="ProfileCard-actions">
+          <div class="ProfileCard-userActions with-rightCaret js-userActions">
+            <div class="UserActions   UserActions--small u-textLeft">
+              <div class="user-actions btn-group not-following not-muting " data-user-id="<%= acc["id"] %>" data-screen-name="<%= acc["screen_name"] %>" data-name="<%= acc["name"] %>" data-protected="false">
+
+                <button class="user-actions-follow-button js-follow-btn follow-button btn small small-follow-btn" type="button">
+                  <span class="button-text follow-text">
+                     <span class="Icon Icon--follow"></span>  
+                    
+                  </span>
+                  <span class="button-text following-text">
+                     Abonné
+                    
+                  </span>
+
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ProfileCard-userFields">
+          <div class="ProfileNameTruncated">
+            <div class="u-textTruncate u-inlineBlock">
+              <a class="ProfileNameTruncated-link u-textInheritColor js-nav js-action-profile-name" href="http://twitter.com//<%= acc["screen_name"] %>">
+                <%= acc["name"] %>
+              </a>
+            </div>
+          </div>
+          <div class="ProfileCard-screenname u-dir" dir="ltr">
+            <a href="http://twitter.com/<%= acc["screen_name"] %>" class="ProfileCard-screennameLink u-linkComplex js-nav">
+              @<span class="u-linkComplex-target"><%= acc["screen_name"] %></span>
+            </a>
+          </div>
+          <p class="ProfileCard-bio u-dir" dir="ltr"><%= acc["description"] %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+<% end %>
+</div>

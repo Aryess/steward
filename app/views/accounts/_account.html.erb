@@ -1,0 +1,22 @@
+<li class="row">
+  <span class="col-md-2">
+    <span class="glyphicon glyphicon-cloud"></span>
+    <%= account.provider %>
+  </span>
+  <span class="login col-md-4">
+    <span class="glyphicon glyphicon-user"></span>
+    <%= account.login %>
+  </span>
+  <span class="col-md-2">
+    <span class="glyphicon glyphicon-time"></span>
+    <%= account.created_at.to_formatted_s(:short) %>
+  </span>
+  <span class="col-md-3">
+    <span class="glyphicon glyphicon-time"></span>
+    <%= account.expiresat.to_formatted_s(:short) if account.expiresat %>
+  </span>
+  <span class="col-md-1 delete_link">
+      <%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, account,
+      method: :delete, data: { confirm: "You sure?" }%>
+  </span>
+</li>

@@ -1,0 +1,16 @@
+<%
+provide(:title, "(" + @result[:count].to_s + ")" ) if @result[:count] > 0
+%>
+<h1>Result:</h1>
+<h6><%= Time.zone.now.to_s %></h6>
+<ul>
+  <% @result[:data].each do |login, has_mail|%>
+    <li>
+      <span class="mail <%= 'no' unless has_mail %>havemail"> message</span> - <%= login%>
+    </li>
+  <% end %>
+</ul>
+
+<pre>
+<%= PP.pp(@res,"") %>
+</pre>

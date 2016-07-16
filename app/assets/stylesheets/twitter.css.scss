@@ -1,0 +1,46 @@
+// Place all the styles related to the twitter controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+
+/* twitter_contact */
+
+.twitter_contacts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border: 1px solid #e8e8e8;
+    margin: 2px;
+  }
+  .content {
+    display: block;
+  }
+  .timestamp {
+    color: $gray-light;;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+  }
+  aside {
+    textarea {
+      height: 100px;
+      margin-bottom: 5px;
+    }
+  }
+  .actBtn {
+    text-align: center;
+    padding: 0;
+  }
+  .usercard {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-bottom: none;
+    &:last-child{
+      border-bottom: 1px solid #e8e8e8;
+    }
+  }
+}

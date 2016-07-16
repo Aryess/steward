@@ -1,0 +1,14 @@
+<ul id="reddit_accounts">
+
+<% current_user.accounts.where(provider: "reddit").each do |acc| %>
+  <li id="acc_<%= acc.id%>">
+    <%= link_to raw('&nbsp;'), '#', class: "#{"no" unless acc.has_notif}havemail mail refreshMp", data: {account_id: acc.id, last_modified: acc.updated_at.httpdate} %>
+    <%= link_to acc.login, "http://reddit.com/u/#{acc.login}", class: "accoutname"%>
+  </li>
+<% end %>
+</ul>
+
+<div class="btn-group">
+  <%= link_to raw('<span class="glyphicon glyphicon-plus"></span>'), accounts_path, class: "btn btn-default" %>
+  <button class="btn btn-default refreshMpAll"><span class="glyphicon glyphicon-refresh"></span></button>
+</div> 
